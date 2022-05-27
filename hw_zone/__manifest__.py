@@ -9,8 +9,8 @@
        海文省份、城市模块
     """,
 
-    'author': "Emmet Duan",
-    'website': "http://www.harmonywin.com",
+    'author': "David Cheng",
+    'website': "http://www.hwua.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
