@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_hw_province_tree" model="ir.ui.view">
+        <field name="name">省份tree视图</field>
+        <field name="model">hw.province</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="name"/>
+               
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hw_province_form" model="ir.ui.view">
+        <field name="name">省份form视图</field>
+        <field name="model">hw.province</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top">
+                        <group>
+                            <field name="name" required='1'/>
+                            
+                        </group>
+                        <group>
+                           
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hw_city_tree" model="ir.ui.view">
+        <field name="name">城市tree视图</field>
+        <field name="model">hw.city</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="department_id" required='1'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hw_city_form" model="ir.ui.view">
+        <field name="name">城市form视图</field>
+        <field name="model">hw.city</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top">
+                        <group>
+                            <field name="name" required='1'/>
+                            <field name="department_id" required='1' options="{'no_create': True,}"/>
+                        </group>
+                        <group>
+                           
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hw_county_tree" model="ir.ui.view">
+        <field name="name">区县tree视图</field>
+        <field name="model">hw.county</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="city_id"/>
+                <field name="department_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hw_county_form" model="ir.ui.view">
+        <field name="name">区县form视图</field>
+        <field name="model">hw.county</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top">
+                        <group>
+                            <field name="name" required='1'/>
+                            <field name="department_id" required='1' options="{'no_create': True,}"/>
+                            <field name="city_id" required='1' options="{'no_create': True,}" domain="[('department_id', '=', department_id)]"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

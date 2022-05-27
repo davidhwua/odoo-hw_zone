@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- 定义省份菜单动作 -->
+		<record id="hw_province_account" model="ir.actions.act_window">
+			<field name="name">省份</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hw.province</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<!-- 定义城市菜单动作 -->
+		<record id="hw_city_account" model="ir.actions.act_window">
+			<field name="name">城市</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hw.city</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- 定义区县菜单动作 -->
+		<record id="hw_county_account" model="ir.actions.act_window">
+			<field name="name">区县</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hw.county</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		
+
+		<menuitem name="省份城市" id="hw_zone_menu" web_icon="hw_zone,static/src/img/zone.png" sequence="1"></menuitem>
+		
+		<menuitem name="省份" id="hw_province_menu" parent="hw_zone_menu" action="hw_province_account" sequence="1" />
+		<menuitem name="城市" id="hw_city_menu" parent="hw_zone_menu" action="hw_city_account" sequence="2" />
+		<menuitem name="区县" id="hw_county_menu" parent="hw_zone_menu" action="hw_county_account" sequence="3" />
+		
+		
+	</data>
+</odoo>
+
